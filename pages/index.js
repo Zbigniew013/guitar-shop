@@ -1,14 +1,28 @@
+import main_foto from '../public/main_page_image.jpg';
+import Image from 'next/image';
+
 function HomePage() {
   return (
-    // <div className='flex flex-col min-h-screen'>
-    //   <Header />
-    <div className='flex relative flex-1 max-w-5xl w-full mx-auto bg-stone-100 h-screen '>
-      <h1 className='flex-grow text-3xl font-bold text-center underline text-red-400 '>
-        Main Page
-      </h1>
-    </div>
-    //   <Footer />
-    // </div>
+    <>
+      {/* <div className='bg-code-grey-950 static'>
+        <picture>
+          <Image
+            src={main_foto}
+            alt={main_foto}
+            className='w-screen h-screen object-cover'
+          />
+        </picture>
+      </div> */}
+      <div className='flex flex-1 max-w-8xl'>
+        <Image
+          src={main_foto}
+          width={1980}
+          height={1320}
+          className='object-cover w-full h-screen'
+        />
+        <title className='text-5xl text-fuchsia-blue-600'>Guitar Shop</title>
+      </div>
+    </>
   );
 }
 export default HomePage;

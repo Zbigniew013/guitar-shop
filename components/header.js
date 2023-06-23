@@ -6,23 +6,23 @@ function Header() {
   const currentRoute = router.pathname;
 
   return (
-    <header className='flex h-20 max-w-5xl w-full mx-auto items-center justify-around border-b border-stone-300 bg-white'>
-      <div className=' text-2xl font-thin '>
+    <header className='flex h-20 w-full mx-auto items-center justify-around border-b border-fuchsia-blue-700 bg-code-grey-950 text-fuchsia-blue-500 '>
+      <div className=' text-2xl '>
         <Link
           href='/'
-          className={`text-2xl font-thin ${
-            currentRoute === '/' ? 'underline decoration-red-400' : ''
+          className={`font-Pacifico text-4xl hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+            currentRoute === '/' ? 'text-fuchsia-blue-300 font-light' : ''
           }`}
         >
           Guitar Shop
         </Link>
       </div>
-      <div className='items-center space-x-8 font-light'>
+      <div className='items-center space-x-8 uppercase'>
         <Link
           href='/guitar_electric'
-          className={` ${
+          className={`font-tiltPrism hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
             currentRoute === '/guitar_electric'
-              ? 'underline decoration-red-400'
+              ? 'font-bold text-fuchsia-blue-300'
               : ''
           }`}
         >
@@ -30,9 +30,9 @@ function Header() {
         </Link>
         <Link
           href='/guitar_acoustic'
-          className={` ${
+          className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
             currentRoute === '/guitar_acoustic'
-              ? 'underline decoration-red-400'
+              ? 'font-bold text-fuchsia-blue-300'
               : ''
           }`}
         >
@@ -40,9 +40,9 @@ function Header() {
         </Link>
         <Link
           href='/guitar_strings'
-          className={` ${
+          className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
             currentRoute === '/guitar_strings'
-              ? 'underline decoration-red-400'
+              ? 'font-bold text-fuchsia-blue-300'
               : ''
           }`}
         >
@@ -50,16 +50,16 @@ function Header() {
         </Link>
         <Link
           href='/account'
-          className={` ${
-            currentRoute === '/account' ? 'underline decoration-red-400' : ''
+          className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+            currentRoute === '/account' ? 'font-bold text-fuchsia-blue-300' : ''
           }`}
         >
           Account
         </Link>
         <Link
           href='/cart'
-          className={` ${
-            currentRoute === '/cart' ? 'underline decoration-red-400' : ''
+          className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+            currentRoute === '/cart' ? 'font-bold text-fuchsia-blue-300' : ''
           }`}
         >
           Cart
@@ -70,7 +70,3 @@ function Header() {
 }
 
 export default Header;
-
-{
-  // /* <button className='flex items-center space-x-3 rounded border border-stone-300 px-4 py-2 text-stone-600 transition hover:border-stone-600 hover:text-stone-900 '></button> */
-}

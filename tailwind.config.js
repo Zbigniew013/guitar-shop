@@ -6,6 +6,18 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      poppins: ['Poppins', 'sans-serif'],
+      tiltPrism: ['TiltPrism', 'sans-serif'],
+      Pacifico: ['Pacifico'],
+      // antonio: ['Antonio'],
+      overpass: 'var(--font-overpass)',
+      antonio: 'var(--font-antonio)',
+      sans: ['ui-sans-serif', 'system-ui'],
+      serif: ['ui-serif', 'Georgia'],
+      mono: ['ui-monospace', 'SFMono-Regular'],
+    },
+
     extend: {
       colors: {
         'mandys-pink-50': '#fcf6f4',

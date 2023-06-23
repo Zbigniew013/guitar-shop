@@ -6,20 +6,20 @@ function Footer() {
   const currentRoute = router.pathname;
 
   return (
-    <footer className='flex max-w-5xl mx-auto h-20 w-full items-center justify-around border-t border-stone-300 bg-white font-light '>
+    <footer className='flex mx-auto h-20 w-full items-center justify-around border-fuchsia-blue-700 bg-code-grey-950 text-fuchsia-blue-500 font-light'>
       <div>GuitarShop ©️ 2023</div>
       <Link
         href='/about'
-        className={` ${
-          currentRoute === '/about' ? 'underline decoration-red-400' : ''
+        className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+          currentRoute === '/about' ? 'font-bold text-fuchsia-blue-300' : ''
         }`}
       >
         About Us
       </Link>
       <Link
         href='/contact'
-        className={` ${
-          currentRoute === '/contact' ? 'underline decoration-red-400' : ''
+        className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+          currentRoute === '/contact' ? 'font-bold text-fuchsia-blue-300' : ''
         }`}
       >
         Contact Us
