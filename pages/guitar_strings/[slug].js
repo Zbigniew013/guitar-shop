@@ -2,11 +2,14 @@ import Image from 'next/image';
 import { GraphQLClient, gql } from 'graphql-request';
 import { useRouter } from 'next/router';
 
-const hygraph = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT, {
-  headers: {
-    Authorization: `Bearer ${process.env.NEXT_PUBLIC_GRAPHCMS_TOKEN}`,
-  },
-});
+const hygraph = new GraphQLClient(
+  'https://eu-central-1-shared-euc1-02.cdn.hygraph.com/content/cli78silh3hv001t7flkz4kx7/master',
+  {
+    headers: {
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_GRAPHCMS_TOKEN}`,
+    },
+  }
+);
 
 function SingleStringPage({ guitarStrings }) {
   const router = useRouter();
