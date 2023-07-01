@@ -6,7 +6,7 @@ function Footer() {
   const currentRoute = router.pathname;
 
   return (
-    <footer className='flex mx-auto h-20 w-full items-center justify-around border-fuchsia-blue-700 bg-code-grey-950 text-fuchsia-blue-500 font-light'>
+    <footer className='flex mx-auto h-20 w-full items-center justify-around border-t border-fuchsia-blue-700 bg-code-grey-950 text-fuchsia-blue-500 font-light'>
       <div>GuitarShop ©️ 2023</div>
       <Link
         href='/about'
