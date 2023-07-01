@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { GraphQLClient, gql } from 'graphql-request';
 import Link from 'next/link';
 
-const hygraph = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT, {
+const hygraph = new GraphQLClient(process.env.HYGRAPH_API_READONLY_TOKEN, {
   headers: {
     Authorization: `Bearer ${process.env.NEXT_PUBLIC_GRAPHCMS_TOKEN}`,
   },
