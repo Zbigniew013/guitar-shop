@@ -2,30 +2,6 @@ import Image from 'next/image';
 import { GraphQLClient, gql } from 'graphql-request';
 import Link from 'next/link';
 
-const hygraph = new GraphQLClient(
-  'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cli78silh3hv001t7flkz4kx7/master',
-  {
-    headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_GRAPHCMS_TOKEN}`,
-    },
-  }
-);
-
-const GuitarStrings = gql`
-  {
-    guitarStrings(first: 20) {
-      id
-      name
-      price
-      specification
-      imageA {
-        url
-      }
-      slug
-    }
-  }
-`;
-
 function StringsPage({ guitarStrings }) {
   return (
     <div className='flex relative flex-1  w-full mx-auto bg-silver-100 h-screen '>
@@ -61,7 +37,26 @@ function StringsPage({ guitarStrings }) {
 
 export default StringsPage;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  const hygraph = new GraphQLClient(
+    'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cli78silh3hv001t7flkz4kx7/master'
+  );
+
+  const GuitarStrings = gql`
+    {
+      guitarStrings(first: 20) {
+        id
+        name
+        price
+        specification
+        imageA {
+          url
+        }
+        slug
+      }
+    }
+  `;
+
   const { guitarStrings } = await hygraph.request(GuitarStrings);
 
   return {

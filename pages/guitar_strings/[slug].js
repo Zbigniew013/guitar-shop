@@ -3,12 +3,7 @@ import { GraphQLClient, gql } from 'graphql-request';
 import { useRouter } from 'next/router';
 
 const hygraph = new GraphQLClient(
-  'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cli78silh3hv001t7flkz4kx7/master',
-  {
-    headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_GRAPHCMS_TOKEN}`,
-    },
-  }
+  'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cli78silh3hv001t7flkz4kx7/master'
 );
 
 function SingleStringPage({ guitarStrings }) {
