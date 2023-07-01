@@ -3,7 +3,7 @@ import { GraphQLClient, gql } from 'graphql-request';
 import Link from 'next/link';
 
 const hygraph = new GraphQLClient(
-  'https://eu-central-1-shared-euc1-02.cdn.hygraph.com/content/cli78silh3hv001t7flkz4kx7/master',
+  'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cli78silh3hv001t7flkz4kx7/master',
   {
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_GRAPHCMS_TOKEN}`,
