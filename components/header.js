@@ -7,7 +7,7 @@ function Header() {
 
   return (
     <header className='flex h-20 w-full mx-auto items-center justify-around border-b border-fuchsia-blue-700 bg-code-grey-950 text-fuchsia-blue-500 '>
-      <div className=' text-2xl '>
+      <div className=' text-3xl '>
         <Link
           href='/'
           className={`font-Pacifico text-4xl hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
@@ -17,12 +17,12 @@ function Header() {
           Guitar Shop
         </Link>
       </div>
-      <div className='items-center space-x-8 uppercase'>
+      <div className='items-center space-x-8 font-Antonio font-light text-xl '>
         <Link
           href='/guitar_electric'
-          className={`font-tiltPrism hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+          className={`  hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
             currentRoute === '/guitar_electric'
-              ? 'font-bold text-fuchsia-blue-300'
+              ? ' font-bold text-fuchsia-blue-300'
               : ''
           }`}
         >

@@ -1,6 +1,6 @@
 import '@/styles/globals.css';
 import Layout from '@/components/layout';
-import { Roboto, Antonio, Overpass } from 'next/font/google';
+import { Antonio, Overpass } from 'next/font/google';
 
 const overpass = Overpass({
   variable: '--font-overpass',

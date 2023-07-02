@@ -1,26 +1,26 @@
 const Pagination = ({ items, pageSize, currentPage, onPageChange }) => {
-  const pagesCount = Math.ceil(items / pageSize); // 100/10
+  const pagesCount = Math.ceil(items / pageSize); // 18/8
 
   if (pagesCount === 1) return null;
   const pages = Array.from({ length: pagesCount }, (_, i) => i + 1);
 
   return (
     <div>
-      <ul className='flex justify-between items-center '>
+      <ul className='flex gap-2 justify-center '>
         {pages.map(page => (
-          <li
-            key={page}
-            className={`
+          <a className='cursor-pointer' onClick={() => onPageChange(page)}>
+            <li
+              key={page}
+              className={` font-antonio text-fuchsia-blue-800 justify-center
             ${
               page === currentPage
-                ? 'flex justify-centre items-center w-2 h-2 border border-solid border-cyan-600 border-s-brandy-rose-300 '
-                : 'flex justify-centre items-center w-2 h-2 border border-solid border-cyan-300 border-s-brandy-rose-600'
+                ? 'flex justify-centre items-center w-8 h-8 border border-solid rounded-md bor border-fuchsia-blue-700 bg-orchid-300'
+                : 'flex justify-centre items-center w-8 h-8 border border-solid rounded-md border-fuchsia-blue-700 '
             }`}
-          >
-            <a className='cursor-pointer' onClick={() => onPageChange(page)}>
+            >
               {page}
-            </a>
-          </li>
+            </li>
+          </a>
         ))}
       </ul>
     </div>

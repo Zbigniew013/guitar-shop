@@ -4,7 +4,7 @@ import Image from 'next/image';
 function HomePage() {
   return (
     <>
-      <div className='flex flex-1 max-w-8xl'>
+      <div className='flex relative flex-1 max-w-8xl w-full mx-auto'>
         <Image
           src={main_foto}
           width={1980}

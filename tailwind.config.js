@@ -7,12 +7,12 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      poppins: ['Poppins', 'sans-serif'],
-      tiltPrism: ['TiltPrism', 'sans-serif'],
+      // poppins: ['Poppins', 'sans-serif'],
+      // tiltPrism: ['TiltPrism', 'sans-serif'],
       Pacifico: ['Pacifico'],
-      // antonio: ['Antonio'],
+      Antonio: ['Antonio'],
       overpass: 'var(--font-overpass)',
-      antonio: 'var(--font-antonio)',
+      // antonio: 'var(--font-antonio)',
       sans: ['ui-sans-serif', 'system-ui'],
       serif: ['ui-serif', 'Georgia'],
       mono: ['ui-monospace', 'SFMono-Regular'],

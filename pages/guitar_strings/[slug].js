@@ -8,10 +8,10 @@ const hygraph = new GraphQLClient(
 
 function SingleStringPage({ guitarStrings }) {
   return (
-    <div className='flex flex-1 w-full mx-auto bg-fuchsia-blue-300 h-screen '>
+    <div className='flex flex-1 w-full mx-auto  min-h-fit '>
       <div className=' flex flex-row gap-20 mt-12  mx-auto'>
         <div>
-          <div className='w-[480px] h-[554px] bg-orchid-500'>
+          <div className='w-[480px] h-[554px]'>
             <img
               src={
                 'https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/kKOmXOO4TvaIv9Vdk1Mn'
@@ -25,11 +25,11 @@ function SingleStringPage({ guitarStrings }) {
           </div>
         </div>
 
-        <div className='w-[600px] h-[666x] bg-orchid-300 mb-8'>
-          <div className='text-3xl font-antonio font-semibold tracking-widest'>
+        <div className='w-[600px] mb-8 h-min'>
+          <div className='text-4xl leading-normal font-Antonio font-semibold tracking-widest'>
             ERNIE BALL REGULAR SLINKY 10-46 GUITAR STRINGS
           </div>
-          <div className='text-3xl font-antonio font-bold '>$6.99</div>
+          <div className='text-3xl font-Antonio font-bold '>$6.99</div>
           <div> - 1 + </div>
           <div>ADD TO CART</div>
           <div className='font-overpass tracking-wide '>
