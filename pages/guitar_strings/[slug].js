@@ -85,7 +85,7 @@ export async function getStaticPaths() {
   const { guitarStrings } = await hygraph.request(GuitarStrings);
 
   return {
-    paths: products.map(({ slug }) => ({
+    paths: guitarStrings.map(({ slug }) => ({
       params: { slug },
     })),
     fallback: false,
