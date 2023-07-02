@@ -6,17 +6,19 @@ const Pagination = ({ items, pageSize, currentPage, onPageChange }) => {
 
   return (
     <div>
-      <ul className='flex gap-2 justify-center '>
+      <ul className='flex gap-2 justify-center font-antonio text-fuchsia-blue-800'>
         {pages.map(page => (
-          <a className='cursor-pointer' onClick={() => onPageChange(page)}>
+          <a
+            key={page}
+            className='cursor-pointer'
+            onClick={() => onPageChange(page)}
+          >
             <li
-              key={page}
-              className={` font-antonio text-fuchsia-blue-800 justify-center
-            ${
-              page === currentPage
-                ? 'flex justify-centre items-center w-8 h-8 border border-solid rounded-md bor border-fuchsia-blue-700 bg-orchid-300'
-                : 'flex justify-centre items-center w-8 h-8 border border-solid rounded-md border-fuchsia-blue-700 '
-            }`}
+              className={
+                page === currentPage
+                  ? 'flex justify-centre items-center w-8 h-8 border border-solid rounded-md border-fuchsia-blue-700 bg-orchid-300 justify-center'
+                  : 'flex justify-centre items-center w-8 h-8 border border-solid rounded-md border-fuchsia-blue-700 justify-center'
+              }
             >
               {page}
             </li>

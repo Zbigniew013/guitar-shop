@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { GraphQLClient, gql } from 'graphql-request';
-import { useRouter } from 'next/router';
 
 const hygraph = new GraphQLClient(
   'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cli78silh3hv001t7flkz4kx7/master'
