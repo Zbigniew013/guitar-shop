@@ -7,12 +7,6 @@ const hygraph = new GraphQLClient(
 );
 
 function SingleStringPage({ guitarStrings }) {
-  const router = useRouter();
-  console.log(router.pathname);
-  console.log(router.query);
-
-  console.log('product is', guitarStrings);
-
   return (
     <div className='flex flex-1 w-full mx-auto bg-fuchsia-blue-300 h-screen '>
       <div className=' flex flex-row gap-20 mt-12  mx-auto'>
@@ -59,7 +53,6 @@ function SingleStringPage({ guitarStrings }) {
 export default SingleStringPage;
 
 export async function getStaticProps() {
-  console.log('(re-)generating');
   const { guitarStrings } = await hygraph.request(GuitarStrings);
 
   return {
@@ -89,10 +82,12 @@ const GuitarStrings = gql`
 `;
 
 export async function getStaticPaths() {
+  const { guitarStrings } = await hygraph.request(GuitarStrings);
+
   return {
-    paths: [
-      { params: { slug: 'ernie-ball-regular-slinky-10-46-guitar-strings' } },
-    ],
+    paths: products.map(({ slug }) => ({
+      params: { slug },
+    })),
     fallback: false,
   };
 }
