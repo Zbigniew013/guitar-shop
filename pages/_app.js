@@ -17,7 +17,7 @@ const antonio = Antonio({
 export default function App({ Component, pageProps }) {
   return (
     <Layout>
-      <main className={` ${overpass.variable} ${antonio.variable}`}>
+      <main className={`${overpass.variable} ${antonio.variable}`}>
         <Component {...pageProps} />
       </main>
     </Layout>

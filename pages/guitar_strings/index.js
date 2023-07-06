@@ -7,7 +7,7 @@ import Pagination from '@/components/pagination';
 
 function StringsPage({ guitarStrings }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 8;
+  let pageSize = 4;
 
   const onPageChange = page => {
     setCurrentPage(page);
@@ -16,13 +16,13 @@ function StringsPage({ guitarStrings }) {
   const paginatedStrings = paginate(guitarStrings, currentPage, pageSize);
 
   return (
-    <>
-      <div className='flex flex-1 w-full mx-auto min-h-screen '>
-        <ul className='grid grid-cols-4 gap-4 content-start justify-start '>
+    <div className='flex flex-col min-h-screen'>
+      <div className=''>
+        <ul className='grid xl:grid-cols-4 md:grid-cols-2  gap-4 justify-start mb-8 '>
           {paginatedStrings.map(
             ({ id, name, imageA, specification, price, slug }) => {
               return (
-                <li key={id}>
+                <li key={id} className=''>
                   <Link href={`/guitar_strings/${slug}`}>
                     <div className=' bg-white p-3 text-center'>
                       <picture>
@@ -34,9 +34,15 @@ function StringsPage({ guitarStrings }) {
                           className='h-80 w-60 mx-auto object-scale-down'
                         />
                       </picture>
-                      <h2 className='font-bold text-2xl px-4 '>{name}</h2>
-                      <p className=' font-light p-4'>{specification}</p>
-                      <p className='text-amber-500 font-bold px-4'>{price}</p>
+                      <h2 className='font-Antonio font-light text-2xl px-4 '>
+                        {name}
+                      </h2>
+                      <p className='font-Antonio font-light p-4'>
+                        {specification}
+                      </p>
+                      <p className='font-Antonio font-normal text-xl text-fuchsia-blue-500  px-4'>
+                        ${price}
+                      </p>
                     </div>
                   </Link>
                 </li>
@@ -45,7 +51,7 @@ function StringsPage({ guitarStrings }) {
           )}
         </ul>
       </div>
-      <div>
+      <div className='flex mb-8 justify-center'>
         <Pagination
           items={guitarStrings.length} // 18
           currentPage={currentPage} // 1
@@ -53,7 +59,7 @@ function StringsPage({ guitarStrings }) {
           onPageChange={onPageChange}
         />
       </div>
-    </>
+    </div>
   );
 }
 

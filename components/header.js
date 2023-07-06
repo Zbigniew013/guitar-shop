@@ -20,7 +20,7 @@ function Header() {
       <div className='items-center space-x-8 font-Antonio font-light text-xl '>
         <Link
           href='/guitar_electric'
-          className={`  hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+          className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
             currentRoute === '/guitar_electric'
               ? ' font-bold text-fuchsia-blue-300'
               : ''

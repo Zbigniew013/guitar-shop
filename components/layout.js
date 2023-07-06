@@ -5,9 +5,13 @@ function Layout(props) {
   return (
     <>
       <div className='flex flex-col min-h-screen'>
-        <Header />
-        {props.children}
-        <Footer />
+        <div className='flex flex-col h-screen'>
+          <div className='flex flex-col flex-grow'>
+            <Header />
+            {props.children}
+            <Footer />
+          </div>
+        </div>
       </div>
     </>
   );

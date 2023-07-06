@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className='flex relative flex-1 max-w-5xl w-full mx-auto bg-stone-100 h-screen '>
+    <div className='flex relative flex-1 max-w-5xl w-full mx-auto bg-stone-100'>
       <h1 className='flex-grow text-3xl font-bold text-center underline text-red-400 '>
         About Page
       </h1>
