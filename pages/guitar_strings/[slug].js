@@ -60,10 +60,9 @@ export async function getStaticProps() {
 }
 const GuitarStrings = gql`
   {
-    guitarStrings {
+    guitarStrings(where: { slug: "slug" }) {
       name
       price
-      slug
       specification
       stock
       id
@@ -81,7 +80,16 @@ const GuitarStrings = gql`
 `;
 
 export async function getStaticPaths() {
-  const { guitarStrings } = await hygraph.request(GuitarStrings);
+  const { guitarStrings } = await hygraph.request(
+    `
+    {
+      guitarStrings(first: 18) {
+        slug
+        }
+      }
+    
+    `
+  );
 
   return {
     paths: guitarStrings.map(({ slug }) => ({
