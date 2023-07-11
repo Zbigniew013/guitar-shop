@@ -18,7 +18,7 @@ function StringsPage({ guitarStrings }) {
   return (
     <div className='flex flex-col min-h-screen'>
       <div className=''>
-        <ul className='grid xl:grid-cols-4 md:grid-cols-2  gap-4 justify-start mb-8 '>
+        <ul className='grid xl:grid-cols-4 md:grid-cols-2 gap-4 justify-start mb-8 '>
           {paginatedStrings.map(
             ({ id, name, imageA, specification, price, slug }) => {
               return (
@@ -41,7 +41,7 @@ function StringsPage({ guitarStrings }) {
                         {specification}
                       </p>
                       <p className='font-Antonio font-normal text-xl text-fuchsia-blue-500  px-4'>
-                        ${price}
+                        ${price / 100}
                       </p>
                     </div>
                   </Link>
