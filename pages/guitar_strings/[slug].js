@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { GraphQLClient } from 'graphql-request';
 import { RichText } from '@graphcms/rich-text-react-renderer';
+import { useState } from 'react';
 
 const hygraph = new GraphQLClient(
   'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cli78silh3hv001t7flkz4kx7/master'
@@ -59,37 +60,47 @@ export async function getStaticPaths() {
 }
 
 function SingleStringPage({ guitarString }) {
+  const [image, setImage] = useState(guitarString.imageA.url);
+
+  const handleClick = index => {
+    const imageSlider = index;
+    setImage(imageSlider);
+  };
+
   return (
     <div className='flex flex-1 w-full mx-auto  min-h-fit '>
       <div className=' flex flex-row gap-20 mt-12  mx-auto'>
         <div>
-          <picture>
+          <button>
             <Image
-              src={guitarString.imageA.url}
+              src={image}
               alt={guitarString.name}
               width={240}
               height={320}
               className='w-[480px] h-[554px] mx-auto object-scale-down'
             />
-          </picture>
+          </button>
 
-          <div className='flex flex-row justify-center gap-4 my-8'>
+          <div className='flex flex-row justify-center gap-8 my-8'>
             <div className='w-20 h-20 bg-orchid-100'>
               <Image
                 src={guitarString.imageA.url}
                 alt={guitarString.name}
                 width={240}
                 height={320}
-                // className='w-[480px] h-[554px] mx-auto object-scale-down'
+                className='transition duration-300 ease-in-out hover:scale-125'
+                onClick={() => handleClick(guitarString.imageA.url)}
               />
             </div>
-            <div className='w-20 h-20 bg-orchid-100'>
+
+            <div className='w-20 h-20 bg-orchid-100 '>
               <Image
                 src={guitarString.imageB.url}
                 alt={guitarString.name}
                 width={240}
                 height={320}
-                // className='w-[480px] h-[554px] mx-auto object-scale-down'
+                className='transition duration-300 ease-in-out hover:scale-125'
+                onClick={() => handleClick(guitarString.imageB.url)}
               />
             </div>
           </div>
