@@ -61,6 +61,7 @@ export async function getStaticPaths() {
 
 function SingleStringPage({ guitarString }) {
   const [image, setImage] = useState(guitarString.imageA.url);
+  const [showModal, setShowModal] = useState(false);
 
   const handleClick = index => {
     const imageSlider = index;
@@ -77,9 +78,37 @@ function SingleStringPage({ guitarString }) {
               alt={guitarString.name}
               width={240}
               height={320}
-              className='w-[480px] h-[554px] mx-auto object-scale-down'
+              className='w-[480px] h-[554px] mx-auto object-scale-down cursor-zoom-in'
+              type='button'
+              onClick={() => setShowModal(true)}
             />
           </button>
+
+          {showModal ? (
+            <>
+              <div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-20 outline-none focus:outline-none'>
+                <div className='relative'>
+                  <button
+                    className='absolute top-2 right-6 h-16 w-16 z-50 text-8xl'
+                    onClick={() => setShowModal(false)}
+                  >
+                    x
+                  </button>
+
+                  <div className='relative p-6 flex-auto'>
+                    <Image
+                      src={image}
+                      alt={guitarString.name}
+                      width={240}
+                      height={320}
+                      className=' h-screen w-full mx-auto  '
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className='opacity-75 fixed inset-0 z-10 bg-black '></div>
+            </>
+          ) : null}
 
           <div className='flex flex-row justify-center gap-8 my-8'>
             <div className='w-20 h-20 bg-orchid-100'>
@@ -88,7 +117,7 @@ function SingleStringPage({ guitarString }) {
                 alt={guitarString.name}
                 width={240}
                 height={320}
-                className='transition duration-300 ease-in-out hover:scale-125'
+                className='transition duration-300 ease-in-out hover:scale-125 cursor-zoom-in'
                 onClick={() => handleClick(guitarString.imageA.url)}
               />
             </div>
@@ -99,7 +128,7 @@ function SingleStringPage({ guitarString }) {
                 alt={guitarString.name}
                 width={240}
                 height={320}
-                className='transition duration-300 ease-in-out hover:scale-125'
+                className='transition duration-300 ease-in-out hover:scale-125 cursor-zoom-in'
                 onClick={() => handleClick(guitarString.imageB.url)}
               />
             </div>
