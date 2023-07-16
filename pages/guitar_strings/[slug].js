@@ -70,8 +70,8 @@ function SingleStringPage({ guitarString }) {
   };
 
   return (
-    <div className='flex flex-1 w-full mx-auto  min-h-fit '>
-      <div className=' flex flex-row gap-20 mt-12  mx-auto'>
+    <div className='flex flex-1 w-full mx-auto min-h-fit '>
+      <div className=' flex items-center md:flex-row  flex-col md:gap-20 md:mt-12 mt-4  mx-auto'>
         <div>
           <button>
             <Image
@@ -104,7 +104,7 @@ function SingleStringPage({ guitarString }) {
                       alt={guitarString.name}
                       width={240}
                       height={320}
-                      className=' h-screen w-full mx-auto  '
+                      className=' w-screen md:h-screen md:w-full mx-auto  '
                     />
                   </div>
                 </div>

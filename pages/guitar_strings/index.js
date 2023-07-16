@@ -18,7 +18,7 @@ function StringsPage({ guitarStrings }) {
   return (
     <div className='flex flex-col min-h-screen'>
       <div className=''>
-        <ul className='grid xl:grid-cols-4 md:grid-cols-2 gap-4 justify-start mb-8 '>
+        <ul className='grid justify-center xl:grid-cols-4 md:grid-cols-2 gap-4 mb-8 '>
           {paginatedStrings.map(
             ({ id, name, imageA, specification, price, slug }) => {
               return (
