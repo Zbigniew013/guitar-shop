@@ -43,39 +43,3 @@ function ElectricGuitarPage() {
 }
 
 export default ElectricGuitarPage;
-
-// import Link from 'next/link';
-// import { GraphQLClient } from 'graphql-request';
-
-// export async function getStaticProps() {
-//   const hygraph = new GraphQLClient(
-//     'https://api-eu-central-1.hygraph.com/v2/ck8sn5tnf01gc01z89dbc7s0o/master'
-//     // 'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cli78silh3hv001t7flkz4kx7/master'
-//   );
-
-//   const { products } = await hygraph.request(
-//     `
-//       {
-//         products {
-//           slug
-//           name
-//         }
-//       }
-//     `
-//   );
-
-//   return {
-//     props: {
-//       products,
-//     },
-//   };
-// }
-
-// const IndexPage = ({ products }) =>
-//   products.map(({ slug, name }) => (
-//     <Link key={slug} href={`/guitar_electric/${slug}`}>
-//       <div>{name}</div>
-//     </Link>
-//   ));
-
-// export default IndexPage;

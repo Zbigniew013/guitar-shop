@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { GraphQLClient } from 'graphql-request';
 import { RichText } from '@graphcms/rich-text-react-renderer';
 import { useState } from 'react';
+import { IoMdCloseCircleOutline } from 'react-icons/io';
 
 const hygraph = new GraphQLClient(
   'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cli78silh3hv001t7flkz4kx7/master'
@@ -89,10 +90,12 @@ function SingleStringPage({ guitarString }) {
               <div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-20 outline-none focus:outline-none'>
                 <div className='relative'>
                   <button
-                    className='absolute top-2 right-6 h-16 w-16 z-50 text-8xl'
+                    className='absolute top-0 right-8 text-justify h-24 w-24 z-30 opacity-50'
                     onClick={() => setShowModal(false)}
                   >
-                    x
+                    <div className='absolute text-7xl text-orchid-800 bg-white rounded-full'>
+                      <IoMdCloseCircleOutline />
+                    </div>
                   </button>
 
                   <div className='relative p-6 flex-auto'>
