@@ -71,7 +71,7 @@ function SingleStringPage({ guitarString }) {
 
   return (
     <div className='flex flex-1 w-full mx-auto min-h-fit '>
-      <div className=' flex items-center md:flex-row  flex-col md:gap-20 md:mt-12 mt-4  mx-auto'>
+      <div className=' flex items-center lg:flex-row  flex-col lg:gap-20 md:mt-12 mt-4  mx-auto'>
         <div>
           <button>
             <Image
