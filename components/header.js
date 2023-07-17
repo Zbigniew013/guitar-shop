@@ -10,112 +10,230 @@ function Header() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <div>
-      <nav className='w-full mx-auto items-center justify-around bg-code-grey-950 text-fuchsia-blue-500'>
-        <div className='justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8'>
-          <div>
-            <div className='flex items-center justify-between py-3 md:py-5 md:block'>
-              <Link
-                href='/'
-                className={`font-Pacifico text-4xl hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
-                  currentRoute === '/' ? 'text-fuchsia-blue-300 font-light' : ''
-                }`}
-              >
-                Guitar Shop
-              </Link>
+    <header className='flex w-full mx-auto items-center justify-around  bg-code-grey-950 text-fuchsia-blue-500 '>
+      {/* Logo */}
 
-              <div className='md:hidden'>
-                <button
-                  className='p-2 text-fuchsia-blue-500 rounded-md outline-none  focus:border border-fuchsia-blue-500 text-3xl'
-                  onClick={() => setNavbar(!navbar)}
-                >
-                  {navbar ? (
-                    <IoMdClose className='w-6 h-6 text-fuchsia-blue-500 text-3xl' />
-                  ) : (
-                    <RxHamburgerMenu className='w-6 h-6 text-fuchsia-blue-500 text-3xl' />
-                  )}
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div
-              className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                navbar ? 'block' : 'hidden'
+      <div className='justify-between w-full px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 py-4 md:py-2'>
+        <div>
+          <div className=' text-3xl flex items-center justify-between py-3 md:py-5 md:block'>
+            <Link
+              href='/'
+              alt='logo'
+              className={`font-Pacifico text-4xl hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+                currentRoute === '/' ? 'text-fuchsia-blue-300 font-light' : ''
               }`}
             >
-              <ul className='items-center justify-center  space-y-8 font-Antonio font-light text-xl md:flex md:space-x-6 md:space-y-0'>
-                <li className='text-fuchsia-blue-500 font-light'>
-                  <Link
-                    href='/guitar_electric'
-                    className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
-                      currentRoute === '/guitar_electric'
-                        ? ' font-bold text-fuchsia-blue-300'
-                        : ''
-                    }`}
-                  >
-                    Electric Guitars
-                  </Link>
-                </li>
-                <li className='text-fuchsia-blue-500 font-light'>
-                  <Link
-                    href='/guitar_acoustic'
-                    className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
-                      currentRoute === '/guitar_acoustic'
-                        ? 'font-bold text-fuchsia-blue-300'
-                        : ''
-                    }`}
-                  >
-                    Acoustic Guitars
-                  </Link>
-                </li>
-                <li className='text-fuchsia-blue-500 font-light'>
-                  <Link
-                    href='/guitar_strings'
-                    className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
-                      currentRoute === '/guitar_strings'
-                        ? 'font-bold text-fuchsia-blue-300'
-                        : ''
-                    }`}
-                  >
-                    Strings
-                  </Link>
-                </li>
-                <li className='text-fuchsia-blue-500 font-light'>
-                  <Link
-                    href='/account'
-                    className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
-                      currentRoute === '/account'
-                        ? 'font-bold text-fuchsia-blue-300'
-                        : ''
-                    }`}
-                  >
-                    Account
-                  </Link>
-                </li>
-                <li className='text-fuchsia-blue-500 font-light'>
-                  <Link
-                    href='/cart'
-                    className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
-                      currentRoute === '/cart'
-                        ? 'font-bold text-fuchsia-blue-300'
-                        : ''
-                    }`}
-                  >
-                    Cart
-                  </Link>
-                </li>
-              </ul>
+              Guitar Shop
+            </Link>
+
+            <div className='md:hidden'>
+              <button
+                className='
+                p-2 text-fuchsia-blue-500 rounded-md outline-none  focus:border border-fuchsia-blue-500'
+                onClick={() => setNavbar(!navbar)}
+              >
+                {navbar ? (
+                  <IoMdClose className='w-6 h-6 text-fuchsia-blue-500 text-3xl' />
+                ) : (
+                  <RxHamburgerMenu className='w-6 h-6 text-fuchsia-blue-500 text-3xl' />
+                )}
+              </button>
             </div>
           </div>
         </div>
-      </nav>
-    </div>
+
+        {/* Navigation */}
+
+        <div className='items-center space-x-8 font-Antonio font-light text-xl '>
+          <div
+            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+              navbar ? 'block' : 'hidden'
+            }`}
+          >
+            <ul className='items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0'>
+              <li className='text-fuchsia-blue-500 font-light'>
+                <Link
+                  href='/guitar_electric'
+                  className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+                    currentRoute === '/guitar_electric'
+                      ? ' font-bold text-fuchsia-blue-300'
+                      : ''
+                  }`}
+                >
+                  Electric Guitars
+                </Link>
+              </li>
+              <li className='text-fuchsia-blue-500 font-light'>
+                <Link
+                  href='/guitar_acoustic'
+                  className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+                    currentRoute === '/guitar_acoustic'
+                      ? 'font-bold text-fuchsia-blue-300'
+                      : ''
+                  }`}
+                >
+                  Acoustic Guitars
+                </Link>
+              </li>
+              <li className='text-fuchsia-blue-500 font-light'>
+                <Link
+                  href='/guitar_strings'
+                  className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+                    currentRoute === '/guitar_strings'
+                      ? 'font-bold text-fuchsia-blue-300'
+                      : ''
+                  }`}
+                >
+                  Strings
+                </Link>
+              </li>
+              <li className='text-fuchsia-blue-500 font-light'>
+                <Link
+                  href='/account'
+                  className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+                    currentRoute === '/account'
+                      ? 'font-bold text-fuchsia-blue-300'
+                      : ''
+                  }`}
+                >
+                  Account
+                </Link>
+              </li>
+              <li className='text-fuchsia-blue-500 font-light'>
+                <Link
+                  href='/cart'
+                  className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+                    currentRoute === '/cart'
+                      ? 'font-bold text-fuchsia-blue-300'
+                      : ''
+                  }`}
+                >
+                  Cart
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
   );
 }
 
 export default Header;
+
+// function Header() {
+//   const router = useRouter();
+//   const currentRoute = router.pathname;
+//   const [navbar, setNavbar] = useState(false);
+
+//   return (
+//     <div>
+//       <nav className='w-full bg-code-grey-950 text-fuchsia-blue-500' alt='logo'>
+//         <div className='w-full justify-between px-4 mx-auto  md:items-center md:px-8'>
+//           <div className='md:items-center justify-between py-3 md:py-5 md:block px-4 mx-auto lg:max-w-7xl md:px-8'>
+//             <div className=' flex md:items-center justify-between py-3 md:py-5 md:block px-4 mx-auto lg:max-w-7xl md:px-8 lex items-center '>
+//               <Link
+//                 href='/'
+//                 className={`font-Pacifico text-4xl hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+//                   currentRoute === '/' ? 'text-fuchsia-blue-300 font-light' : ''
+//                 }`}
+//               >
+//                 Guitar Shop
+//               </Link>
+
+//               <div className='md:hidden'>
+//                 <button
+//                   className='p-2 text-fuchsia-blue-500 rounded-md outline-none  focus:border border-fuchsia-blue-500 text-3xl'
+//                   onClick={() => setNavbar(!navbar)}
+//                 >
+//                   {navbar ? (
+//                     <IoMdClose className='w-6 h-6 text-fuchsia-blue-500 text-3xl' />
+//                   ) : (
+//                     <RxHamburgerMenu className='w-6 h-6 text-fuchsia-blue-500 text-3xl' />
+//                   )}
+//                 </button>
+//               </div>
+//             </div>
+//           </div>
+
+//           <div>
+//             <div
+//               className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+//                 navbar ? 'block' : 'hidden'
+//               }`}
+//             >
+
+//               <ul className='items-center justify-center space-y-8 font-Antonio font-light text-xl md:flex md:space-x-6 md:space-y-0'>
+//                 <li className='text-fuchsia-blue-500 font-light'>
+//                   <Link
+//                     href='/guitar_electric'
+//                     className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+//                       currentRoute === '/guitar_electric'
+//                         ? ' font-bold text-fuchsia-blue-300'
+//                         : ''
+//                     }`}
+//                   >
+//                     Electric Guitars
+//                   </Link>
+//                 </li>
+//                 <li className='text-fuchsia-blue-500 font-light'>
+//                   <Link
+//                     href='/guitar_acoustic'
+//                     className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+//                       currentRoute === '/guitar_acoustic'
+//                         ? 'font-bold text-fuchsia-blue-300'
+//                         : ''
+//                     }`}
+//                   >
+//                     Acoustic Guitars
+//                   </Link>
+//                 </li>
+//                 <li className='text-fuchsia-blue-500 font-light'>
+//                   <Link
+//                     href='/guitar_strings'
+//                     className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+//                       currentRoute === '/guitar_strings'
+//                         ? 'font-bold text-fuchsia-blue-300'
+//                         : ''
+//                     }`}
+//                   >
+//                     Strings
+//                   </Link>
+//                 </li>
+//                 <li className='text-fuchsia-blue-500 font-light'>
+//                   <Link
+//                     href='/account'
+//                     className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+//                       currentRoute === '/account'
+//                         ? 'font-bold text-fuchsia-blue-300'
+//                         : ''
+//                     }`}
+//                   >
+//                     Account
+//                   </Link>
+//                 </li>
+//                 <li className='text-fuchsia-blue-500 font-light'>
+//                   <Link
+//                     href='/cart'
+//                     className={` hover:text-fuchsia-blue-300 active:text-fuchsia-blue-500 ${
+//                       currentRoute === '/cart'
+//                         ? 'font-bold text-fuchsia-blue-300'
+//                         : ''
+//                     }`}
+//                   >
+//                     Cart
+//                   </Link>
+//                 </li>
+//               </ul>
+//             </div>
+//           </div>
+//         </div>
+//       </nav>
+//     </div>
+//   );
+// }
+
+// export default Header;
 
 // import Link from 'next/link';
 // import { useRouter } from 'next/router';

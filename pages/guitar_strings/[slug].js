@@ -71,7 +71,7 @@ function SingleStringPage({ guitarString }) {
 
   return (
     <div className='flex flex-1 w-full mx-auto min-h-fit '>
-      <div className=' flex items-center lg:flex-row  flex-col lg:gap-20 md:mt-12 mt-4  mx-auto'>
+      <div className=' flex items-center lg:flex-row  flex-col lg:gap-14 md:mt-12 mt-4  mx-auto'>
         <div>
           <button>
             <Image
@@ -113,7 +113,7 @@ function SingleStringPage({ guitarString }) {
             </>
           ) : null}
 
-          <div className='flex flex-row justify-center gap-8 my-8'>
+          <div className='flex flex-row justify-center gap-8 my-4 lg:my-8'>
             <div className='w-20 h-20 bg-orchid-100'>
               <Image
                 src={guitarString.imageA.url}
@@ -138,19 +138,21 @@ function SingleStringPage({ guitarString }) {
           </div>
         </div>
 
-        <div className='w-[600px] mb-8 h-min'>
-          <div className='text-4xl leading-normal font-Antonio font-semibold tracking-widest'>
+        <div className='w-full lg:w-[600px] mb-8 h-min'>
+          <div className='text-3xl mt-4 mx-2 lg:text-4xl lg:leading-normal font-Antonio font-semibold tracking-widest'>
             {guitarString.name}
           </div>
-          <div className='text-3xl font-Antonio font-bold mt-12 text-fuchsia-blue-500 '>
+          <div className='text-3xl font-Antonio font-bold mx-2 mt-6 lg:mt-12 text-fuchsia-blue-500 '>
             ${guitarString.price / 100}
           </div>
-          <div className='mt-12'> - 1 + </div>
-          <div className='mt-12'>ADD TO CART</div>
-          <div className='font-overpass tracking-wide mt-12 '>
+          <div className=' mx-2 mt-6 lg:mt-12'> - 1 + </div>
+          <div className=' mx-2 mt-6 lg:mt-12'>ADD TO CART</div>
+          <div className='font-overpass tracking-wide  mx-2 mt-6 lg:mt-12'>
             <RichText content={guitarString.description.raw.children} />
           </div>
-          <div className='mt-12'>{guitarString.specification}</div>
+          <div className=' mx-2 mt-6 lg:mt-12'>
+            {guitarString.specification}
+          </div>
         </div>
       </div>
     </div>
