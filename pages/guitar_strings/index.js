@@ -40,8 +40,8 @@ function StringsPage({ guitarStrings }) {
                       <p className='font-Antonio font-light p-4'>
                         {specification}
                       </p>
-                      <p className='font-Antonio font-normal text-xl text-fuchsia-blue-500  px-4'>
-                        ${price / 100}
+                      <p className='font-Antonio font-normal text-xl text-fuchsia-blue-500  px-4 tracking-wider'>
+                        $ {price / 100}
                       </p>
                     </div>
                   </Link>

@@ -1,8 +1,11 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { GraphQLClient } from 'graphql-request';
 import { RichText } from '@graphcms/rich-text-react-renderer';
 import { useState } from 'react';
 import { IoMdCloseCircleOutline } from 'react-icons/io';
+import { Cart } from '@/components/cart';
+import { Quanitity } from '@/components/quanitity';
 
 const hygraph = new GraphQLClient(
   'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cli78silh3hv001t7flkz4kx7/master'
@@ -71,15 +74,15 @@ function SingleStringPage({ guitarString }) {
 
   return (
     <div className='flex flex-1 w-full mx-auto min-h-fit '>
-      <div className=' flex items-center lg:flex-row  flex-col lg:gap-14 md:mt-12 mt-4  mx-auto'>
+      <div className=' flex items-center lg:flex-row  flex-col lg:gap-14 md:mt-8 mt-4  mx-auto'>
         <div>
           <button>
             <Image
               src={image}
               alt={guitarString.name}
-              width={240}
-              height={320}
-              className='w-[480px] h-[554px] mx-auto object-scale-down cursor-zoom-in'
+              width={440}
+              height={480}
+              className='w-[440px] h-[480px] mx-auto object-scale-down cursor-zoom-in'
               type='button'
               onClick={() => setShowModal(true)}
             />
@@ -90,10 +93,10 @@ function SingleStringPage({ guitarString }) {
               <div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-20 outline-none focus:outline-none'>
                 <div className='relative'>
                   <button
-                    className='absolute top-0 right-8 text-justify h-24 w-24 z-30 opacity-50'
+                    className='absolute top-0 right-2 md:right-8 text-justify h-24 w-24 z-30 opacity-50'
                     onClick={() => setShowModal(false)}
                   >
-                    <div className='absolute text-7xl text-orchid-800 bg-white rounded-full'>
+                    <div className='absolute text-5xl md:text-7xl text-code-grey-800 bg-white rounded-full'>
                       <IoMdCloseCircleOutline />
                     </div>
                   </button>
@@ -142,11 +145,13 @@ function SingleStringPage({ guitarString }) {
           <div className='text-3xl mt-4 mx-2 lg:text-4xl lg:leading-normal font-Antonio font-semibold tracking-widest'>
             {guitarString.name}
           </div>
-          <div className='text-3xl font-Antonio font-bold mx-2 mt-6 lg:mt-12 text-fuchsia-blue-500 '>
-            ${guitarString.price / 100}
+          <div className='text-3xl font-Antonio font-bold mx-2 mt-6 lg:mt-12 text-fuchsia-blue-500 tracking-wider'>
+            $ {guitarString.price / 100}
           </div>
-          <div className=' mx-2 mt-6 lg:mt-12'> - 1 + </div>
-          <div className=' mx-2 mt-6 lg:mt-12'>ADD TO CART</div>
+
+          <Quanitity />
+          <Cart />
+
           <div className='font-overpass tracking-wide  mx-2 mt-6 lg:mt-12'>
             <RichText content={guitarString.description.raw.children} />
           </div>
